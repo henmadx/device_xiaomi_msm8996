@@ -70,7 +70,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-
             android:title="@string/graphics_title">
 
     <PreferenceScreen
