@@ -107,6 +107,7 @@ DEVICE_SPECIFIC_CAMERA_PATH := $(VENDOR_PATH)/camera
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
 
 # Dex
 #ifeq ($(HOST_OS),linux)

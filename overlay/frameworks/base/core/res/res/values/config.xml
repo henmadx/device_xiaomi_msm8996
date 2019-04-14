@@ -453,7 +453,12 @@
     <integer name="config_button_brightness_default">128</integer>
     <integer name="config_deviceHardwareWakeKeys">69</integer>
 
-    
+    <!-- Whether to show VoLTE icon in the status bar -->
+    <bool name="config_display_volte">true</bool>
+
+    <!-- Whether device has screen with higher aspect ratio -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>
+
     <!-- <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>com.cyanogenmod.settings.device.KeyHandler</item>
     </string-array> -->
