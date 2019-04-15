@@ -57,7 +57,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
+    media.camera.ts.monotonic=0 \
+    persist.camera.HAL3.enabled=1 \
     persist.camera.gyro.disable=0 \
+    persist.camera.eis.enable=1 \
     persist.camera.imglib.fddsp=1
 
 # CNE
@@ -90,6 +93,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=1 \
     debug.sf.hw=1 \
+    debug.cpurend.vsync=false \
     debug.sf.latch_unsignaled=1 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
