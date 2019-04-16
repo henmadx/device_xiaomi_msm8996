@@ -456,10 +456,11 @@
     <!-- Whether to show VoLTE icon in the status bar -->
     <bool name="config_display_volte">true</bool>
 
-    <bool name="config_cleanupUnusedFingerprints">false</bool>
-
-    <!-- <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+    <!-- True if the home button has the ability to wake up phone from lockscreen-->
+    <bool name="config_HomeWakeButton">false</bool>
+	
+    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>com.cyanogenmod.settings.device.KeyHandler</item>
-    </string-array> -->
+    </string-array> 
 
 </resources>
