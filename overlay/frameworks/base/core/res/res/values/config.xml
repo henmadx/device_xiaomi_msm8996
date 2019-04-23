@@ -452,7 +452,12 @@
     <integer name="config_deviceHardwareKeys">83</integer>
     <integer name="config_button_brightness_default">128</integer>
     <integer name="config_deviceHardwareWakeKeys">69</integer>
-
+	
+    <!-- Max visible notification icons -->
+    <integer name="config_maxVisibleNotificationIcons">4</integer>
+	
+    <!-- Whether to show HD icon in the status bar for volte -->
+    <bool name="config_display_hd_volte">true</bool>
     
     <!-- <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>com.cyanogenmod.settings.device.KeyHandler</item>
