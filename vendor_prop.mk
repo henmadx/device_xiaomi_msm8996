@@ -108,6 +108,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.perf_hint_window=50 \
     vendor.gralloc.enable_fb_ubwc=1
 
+# UI
+    PRODUCT_PROPERTY_OVERRIDES += \
+    sys.use_fifo_ui=1
+
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
