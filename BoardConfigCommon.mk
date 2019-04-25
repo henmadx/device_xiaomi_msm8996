@@ -160,6 +160,9 @@ TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
+# Lineage Hardware
+JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(VENDOR_PATH)/lineagehw|**/*.java
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := f2fs
