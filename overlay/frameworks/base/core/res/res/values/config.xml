@@ -439,4 +439,7 @@
     <integer name="config_button_brightness_default">128</integer>
     <integer name="config_deviceHardwareWakeKeys">69</integer>
 
+    <!-- Max visible notification icons -->
+    <integer name="config_maxVisibleNotificationIcons">5</integer>
+
 </resources>
