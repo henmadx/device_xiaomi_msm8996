@@ -433,4 +433,10 @@
     <!-- Disable AOD by default -->
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
 
+    <!-- Button Fix -->
+    <bool name="config_button_brightness_support">true</bool>
+    <integer name="config_deviceHardwareKeys">83</integer>
+    <integer name="config_button_brightness_default">128</integer>
+    <integer name="config_deviceHardwareWakeKeys">69</integer>
+
 </resources>
