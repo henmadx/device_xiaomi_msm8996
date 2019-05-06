@@ -319,19 +319,21 @@
 
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
-        <item>30</item>
-        <item>12</item>
-    </integer-array>
-	
-    <!-- Vibrator pattern for feedback about touching a virtual key -->
-    <integer-array name="config_virtualKeyVibePattern">
-        <item>30</item>
+        <item>0</item>
+        <item>7</item>
         <item>10</item>
     </integer-array>
-	
+
+    <!-- Vibrator pattern for feedback about touching a virtual key -->
+    <integer-array name="config_virtualKeyVibePattern">
+        <item>0</item>
+        <item>5</item>
+        <item>10</item>
+    </integer-array>
+
     <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">
-        <item>28</item>
+        <item>10</item>
     </integer-array>
 	
     <!-- The default intensity level for haptic feedback. See
@@ -375,6 +377,8 @@
         <item>"/system/framework/boot.vdex"</item>
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
         <item>"/system/framework/boot-core-libart.vdex"</item>
+        <item>"/system/priv-app/SystemUI/oat/arm64/SystemUI.vdex"</item>
+        <item>"/system/priv-app/SystemUI/oat/arm64/SystemUI.odex"</item>
     </string-array>
 
     <!-- Should the pinner service pin the Camera application? -->
@@ -488,5 +492,8 @@
     <!-- <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>com.cyanogenmod.settings.device.KeyHandler</item>
     </string-array> -->
+
+    <!-- Should the pinner service pin the Home application? -->
+    <bool name="config_pinnerHomeApp">true</bool>
 
 </resources>
