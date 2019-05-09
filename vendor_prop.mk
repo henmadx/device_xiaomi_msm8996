@@ -110,10 +110,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.perf_hint_window=50 \
     vendor.gralloc.enable_fb_ubwc=1
 
-# IMS
+# IMS / VoLTE
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1
+   persist.dbg.volte_avail_ovr=1 \
+   persist.dbg.vt_avail_ovr=1 \
+   persist.dbg.wfc_avail_ovr=1 \
+   persist.radio.VT_CAM_INTERFACE=2 \
+   persist.radio.VT_ENABLE=1 \
+   persist.radio.VT_HYBRID_ENABLE=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
