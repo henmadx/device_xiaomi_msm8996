@@ -486,4 +486,8 @@
     <!-- Do the battery/notification LEDs support pulsing?
          Used to decide if we show pulse settings -->
     <bool name="config_ledCanPulse">true</bool>
+
+    <!-- Whether to enable Qualcomm Boost Framework -->
+    <bool name="config_enableQcCpuBoost">true</bool>
+
 </resources>
