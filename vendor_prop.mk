@@ -93,6 +93,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 sys.use_fifo_ui=1
 
+# Touch response
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.qti.inputopts.enable=true \
+    persist.vendor.qti.inputopts.movetouchslop=0.6
+
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=1 \
@@ -103,6 +108,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
     persist.hwc.enable_vds=1 \
+    persist.sys.wfd.virtual=0 \
     ro.opengles.version=196610 \
     ro.sf.lcd_density=480 \
     vendor.display.disable_rotator_split=1 \
@@ -111,16 +117,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.perf_hint_window=50 \
     vendor.gralloc.enable_fb_ubwc=1
 
-# IMS
+# IMS / VoLTE
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1
+   persist.dbg.volte_avail_ovr=1 \
+   persist.dbg.vt_avail_ovr=1 \
+   persist.dbg.wfc_avail_ovr=1 \
+   persist.radio.VT_CAM_INTERFACE=2 \
+   persist.radio.VT_ENABLE=1 \
+   persist.radio.VT_HYBRID_ENABLE=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
     vendor.video.disable.ubwc=1 \
-    vidc.enc.dcvs.extra-buff-count=2
+    vidc.enc.dcvs.extra-buff-count=2 \
+    mm.enable.sec.smoothstreaming=true
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
