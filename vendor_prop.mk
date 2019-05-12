@@ -96,7 +96,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.gralloc.gfx_ubwc_disable=0 \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=1 \
-    debug.cpurend.vsync=false \
     debug.sf.latch_unsignaled=1 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
@@ -118,7 +117,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
     vendor.video.disable.ubwc=1 \
-    vidc.enc.dcvs.extra-buff-count=2
+    vidc.enc.dcvs.extra-buff-count=2 \
+    mm.enable.sec.smoothstreaming=true
+    
+# Touch response
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.qti.inputopts.enable=true \
+    persist.vendor.qti.inputopts.movetouchslop=0.6
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
