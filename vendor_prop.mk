@@ -89,15 +89,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
-# UI
-PRODUCT_PROPERTY_OVERRIDES += \
-sys.use_fifo_ui=1
-
-# Touch response
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.qti.inputopts.enable=true \
-    persist.vendor.qti.inputopts.movetouchslop=0.6
-
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=1 \
