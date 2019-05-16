@@ -126,10 +126,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.qti.sys.fw.bg_apps_limit=60 \
-	ro.vendor.qti.sys.fw.bservice_enable=true \
-	ro.vendor.qti.sys.fw.bservice_limit=5 \
+    ro.vendor.qti.sys.fw.bg_apps_limit=60 \
+    ro.vendor.qti.sys.fw.bservice_enable=true \
+    ro.vendor.qti.sys.fw.bservice_limit=5 \
     ro.vendor.qti.sys.fw.bservice_age=5000
+
+# UI
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.use_fifo_ui=1
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
