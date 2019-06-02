@@ -159,6 +159,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.redir_party_num=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
+    persist.radio.add_power_save=1 \
     persist.vendor.radio.sib16_support=1
 
 # RmNet Data
