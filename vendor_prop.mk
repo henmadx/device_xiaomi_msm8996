@@ -62,6 +62,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera \
     persist.camera.gyro.disable=0 \
     persist.camera.eis.enable=1 \
+    camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp,com.facebook.katana,com.instagram.android,com.snapchat.android,com.viber.voip \
     persist.camera.imglib.fddsp=1
 
 # CNE
