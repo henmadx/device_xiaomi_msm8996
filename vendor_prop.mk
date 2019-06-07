@@ -62,7 +62,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera \
     persist.camera.gyro.disable=0 \
     persist.camera.eis.enable=1 \
-    camera.hal1.packagelist=com.whatsapp,com.facebook.katana,com.instagram.android,com.snapchat.android \
     persist.camera.imglib.fddsp=1
 
 # CNE
@@ -109,11 +108,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.perf_hint_window=50 \
     vendor.gralloc.enable_fb_ubwc=1
 
-# IMS
+# IMS / VoLTE
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.ims_volte_enable=1 \
-    persist.dbg.vt_avail_ovr=1
+   persist.dbg.volte_avail_ovr=1 \
+   persist.dbg.vt_avail_ovr=1 \
+   persist.dbg.wfc_avail_ovr=1 \
+   persist.radio.VT_CAM_INTERFACE=2 \
+   persist.radio.VT_ENABLE=1 \
+   persist.radio.VT_HYBRID_ENABLE=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -181,10 +183,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.usb.controller=6a00000.dwc3
-
-# UI
-PRODUCT_PROPERTY_OVERRIDES += \
-sys.use_fifo_ui=1
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
