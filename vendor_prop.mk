@@ -55,6 +55,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.btconfig.chip=QCA6164 \
     ro.btconfig.dev=/dev/ttyHS0
 
+# Boot
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.vendor.shutdown.waittime=500
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     media.camera.ts.monotonic=0 \
