@@ -141,11 +141,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.vendor.qti.sys.fw.bg_apps_limit=60
-
-# Priv-app permissions whitelist
-#PRODUCT_PROPERTY_OVERRIDES += \
-#   ro.control_privapp_permissions=enforce
+    ro.vendor.qti.sys.fw.bg_apps_limit=60 \
+    ro.min.fling_velocity=140 \
+    ro.max.fling_velocity=40000
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
