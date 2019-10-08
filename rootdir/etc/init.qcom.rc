@@ -203,6 +203,8 @@ on early-boot
     write /sys/kernel/boot_slpi/boot 1
     chown root audio /sys/kernel/boot_adsp/boot
 
+    exec u:r:qti_init_shell:s0 -- /etc/init.qcom.early_boot.sh
+
     # vendor.health-hal needs to be able to RW
     chown system system /sys/devices/soc/qpnp-fg-22/cycle_counts_bins
     # HardwareInfo needs to be able to read CC bins
