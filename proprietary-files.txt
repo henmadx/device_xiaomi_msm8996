@@ -670,7 +670,7 @@ vendor/lib/libmdmdetect.so
 vendor/radio/qcril_database/qcril.db
 
 # Sensors - from LA.UM.7.5.r1-04800-8x96.0
-vendor/bin/sensors.qcom
+vendor/bin/sensors.qti|18011d46135a2635bcfdc34e8b4d3fdaff7a76fb
 vendor/lib64/hw/activity_recognition.msm8996.so|c29a0dfff27824dac39a21f56a92bf319acb051b
 vendor/lib64/libsensor1.so|1934268e2f28ee9d705d5ff060544d06e42afcc3
 vendor/lib64/libsensor_reg.so|942fbf9ef1cfc87596f850e7ff1a86e7a9ddc846
