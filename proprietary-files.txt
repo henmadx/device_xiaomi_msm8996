@@ -708,7 +708,7 @@ bin/wfdservice|edeb291221024401cbae69c2fa4e58733b7efc4c
 etc/init/wfdservice.rc|311bfdd1675e56499662f39455536b75b78477bb
 etc/wfdconfig.xml|522340c3a3026dfebbd669f9def3bd165514611d
 etc/wfdconfigsink.xml|fbae4dad5e766c0c4e7658f6f96bf135250fb34b
--framework/WfdCommon.jar|54c335128814e8d5f7c00a99d155139f55b9802e
+-framework/WfdCommon.jar|7b925c98d811b342e55549521af5c0a244e44025
 lib64/libwfdclient.so|b743f944d041ce7f4746bc0d4beeedb6286287f7
 lib64/libwfdnative.so|870af2c48885bf258a0677ae0f69a36e27b3bcf9
 lib/com.qualcomm.qti.wifidisplayhal@1.0.so|93487a83a35f0fa3fe37445edd3ff22fcc52e4fc
