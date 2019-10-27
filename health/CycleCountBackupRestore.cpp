@@ -15,34 +15,41 @@
  */
 
 #include "CycleCountBackupRestore.h"
+
 namespace device {
 namespace xiaomi {
 namespace capricorn {
 namespace health {
 
 static constexpr char kCycCntFile[] = "sys/class/power_supply/bms/device/cycle_counts_bins";
-static constexpr char kSysPersistFile[] = "/mnt/vendor/persist/battery/qcom_cycle_counts_bins";
+static constexpr char kSysPersistFile[] = "/persist/battery/qcom_cycle_counts_bins";
 static constexpr int kBuffSize = 256;
- CycleCountBackupRestore::CycleCountBackupRestore() { }
- void CycleCountBackupRestore::Restore()
+
+CycleCountBackupRestore::CycleCountBackupRestore() { }
+
+void CycleCountBackupRestore::Restore()
 {
     ReadFromStorage();
     ReadFromSRAM();
     UpdateAndSave();
 }
- void CycleCountBackupRestore::Backup()
+
+void CycleCountBackupRestore::Backup()
 {
     ReadFromSRAM();
     UpdateAndSave();
 }
- void CycleCountBackupRestore::ReadFromStorage()
+
+void CycleCountBackupRestore::ReadFromStorage()
 {
     std::string buffer;
-     if (!android::base::ReadFileToString(std::string(kSysPersistFile), &buffer)) {
+
+    if (!android::base::ReadFileToString(std::string(kSysPersistFile), &buffer)) {
         LOG(ERROR) << "Cannot read the storage file";
         return;
     }
-     if (sscanf(buffer.c_str(), "%d %d %d %d %d %d %d %d",
+
+    if (sscanf(buffer.c_str(), "%d %d %d %d %d %d %d %d",
                &sw_bins_[0], &sw_bins_[1], &sw_bins_[2], &sw_bins_[3],
                &sw_bins_[4], &sw_bins_[5], &sw_bins_[6], &sw_bins_[7])
         != kBucketCount)
@@ -50,25 +57,33 @@ static constexpr int kBuffSize = 256;
     else
         LOG(INFO) << "Storage data: " << buffer;
 }
- void CycleCountBackupRestore::SaveToStorage()
+
+void CycleCountBackupRestore::SaveToStorage()
 {
     char strData[kBuffSize];
-     snprintf(strData, kBuffSize, "%d %d %d %d %d %d %d %d",
+
+    snprintf(strData, kBuffSize, "%d %d %d %d %d %d %d %d",
              sw_bins_[0], sw_bins_[1], sw_bins_[2], sw_bins_[3],
              sw_bins_[4], sw_bins_[5], sw_bins_[6], sw_bins_[7]);
-     LOG(INFO) << "Save to Storage: " << strData;
-     if (!android::base::WriteStringToFile(strData, std::string(kSysPersistFile)))
+
+    LOG(INFO) << "Save to Storage: " << strData;
+
+    if (!android::base::WriteStringToFile(strData, std::string(kSysPersistFile)))
         LOG(ERROR) << "Write file error: " << strerror(errno);
 }
- void CycleCountBackupRestore::ReadFromSRAM()
+
+void CycleCountBackupRestore::ReadFromSRAM()
 {
     std::string buffer;
-     if (!android::base::ReadFileToString(std::string(kCycCntFile), &buffer)) {
+
+    if (!android::base::ReadFileToString(std::string(kCycCntFile), &buffer)) {
         LOG(ERROR) << "Read cycle counter error: " << strerror(errno);
         return;
     }
-     buffer = android::base::Trim(buffer);
-     if (sscanf(buffer.c_str(), "%d %d %d %d %d %d %d %d",
+
+    buffer = android::base::Trim(buffer);
+
+    if (sscanf(buffer.c_str(), "%d %d %d %d %d %d %d %d",
                &hw_bins_[0], &hw_bins_[1], &hw_bins_[2], &hw_bins_[3],
                &hw_bins_[4], &hw_bins_[5], &hw_bins_[6], &hw_bins_[7])
         != kBucketCount)
@@ -76,17 +91,23 @@ static constexpr int kBuffSize = 256;
     else
         LOG(INFO) << "SRAM data: " << buffer;
 }
- void CycleCountBackupRestore::SaveToSRAM()
+
+void CycleCountBackupRestore::SaveToSRAM()
 {
     char strData[kBuffSize];
-     snprintf(strData, kBuffSize, "%d %d %d %d %d %d %d %d",
+
+    snprintf(strData, kBuffSize, "%d %d %d %d %d %d %d %d",
              hw_bins_[0], hw_bins_[1], hw_bins_[2], hw_bins_[3],
              hw_bins_[4], hw_bins_[5], hw_bins_[6], hw_bins_[7]);
-     LOG(INFO) << "Save to SRAM: "  << strData ;
-     if (!android::base::WriteStringToFile(strData, std::string(kCycCntFile)))
+
+    LOG(INFO) << "Save to SRAM: "  << strData ;
+
+    if (!android::base::WriteStringToFile(strData, std::string(kCycCntFile)))
         LOG(ERROR) << "Write data error: " << strerror(errno);
 }
- void CycleCountBackupRestore::UpdateAndSave()
+
+
+void CycleCountBackupRestore::UpdateAndSave()
 {
     bool backup = false;
     bool restore = false;

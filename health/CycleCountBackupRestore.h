@@ -24,15 +24,19 @@ namespace device {
 namespace xiaomi {
 namespace capricorn {
 namespace health {
- static constexpr int kBucketCount = 8;
- class CycleCountBackupRestore {
+
+static constexpr int kBucketCount = 8;
+
+class CycleCountBackupRestore {
 public:
     CycleCountBackupRestore();
     void Restore();
     void Backup();
- private:
+
+private:
     int sw_bins_[kBucketCount];
     int hw_bins_[kBucketCount];
+
     void ReadFromStorage();
     void SaveToStorage();
     void ReadFromSRAM();
