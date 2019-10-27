@@ -300,10 +300,10 @@ vendor/lib64/libsecureui_svcsock.so|dbd7400a449a10573a2d8d3aafc0214a64aa1cd7
 vendor/lib64/libssd.so|a3b4f5c81b96966f8d2a1a2f8518522f223e73fb
 vendor/lib/libQSEEComAPI.so|ca74ebd4225afbb8fd02ea72cd0c04303da9c2f2
 
-# DRM (Widevine) - from daisy 9/PKQ1.180917.001/V10.0.7.0.PDLMIXM
-vendor/bin/hw/android.hardware.drm@1.1-service.widevine|9743c4ecd0fb8773795bcbfbb406f25616c04129
+# DRM Widevine - from crosshatch - PQ3A.190801.002
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine|06774deec920c1ad8cc39969ffe86bd91b6b5d29
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|458dd241f5f8536eccb57f012b3eba0061736e8e
-vendor/lib64/libwvhidl.so|2ddd2b76f1f16fd1a885fd6ee41c970928f25c3e
+vendor/lib64/libwvhidl.so|e369af6eb915f83527e2caa5fd86927987a28b56
 
 # Gatekeeper - from LA.UM.7.5.r1-04800-8x96.0
 vendor/lib64/hw/gatekeeper.msm8996.so|d324fd57026ac20409c474cfc4e15595aa9d4738
