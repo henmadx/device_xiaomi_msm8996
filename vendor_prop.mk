@@ -164,6 +164,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.force_on_dc=true \
     persist.radio.multisim.config=dsds \
     persist.radio.redir_party_num=1 \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
     persist.radio.add_power_save=1 \
