@@ -14,6 +14,11 @@
 # limitations under the License.
 #
 
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+dalvik.vm.dex2oat-filter=speed \
+dalvik.vm.image-dex2oat-filter=speed
+
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
@@ -57,7 +62,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
+    media.camera.ts.monotonic=0 \
+    persist.camera.HAL3.enabled=1 \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera \
     persist.camera.gyro.disable=0 \
+    persist.camera.eis.enable=1 \
     persist.camera.imglib.fddsp=1
 
 # CNE
@@ -69,7 +78,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.iwlan.enable=true \
     persist.data.mode=concurrent \
     persist.data.netmgrd.qos.enable=true \
-    ro.use_data_netmgrd=true
+    ro.use_data_netmgrd=true \
+    ro.vendor.use_data_netmgrd=true
 
 # Display (Qualcomm AD)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -92,6 +102,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.gralloc.gfx_ubwc_disable=0 \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=1 \
+    debug.cpurend.vsync=false \
     debug.sf.latch_unsignaled=1 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
@@ -104,20 +115,28 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.perf_hint_window=50 \
     vendor.gralloc.enable_fb_ubwc=1
 
-# IMS
+# IMS / VoLTE
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1
+   persist.dbg.volte_avail_ovr=1 \
+   persist.dbg.vt_avail_ovr=1 \
+   persist.dbg.wfc_avail_ovr=1 \
+   persist.radio.VT_CAM_INTERFACE=2 \
+   persist.radio.VT_ENABLE=1 \
+   persist.radio.VT_HYBRID_ENABLE=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
     vendor.video.disable.ubwc=1 \
-    vidc.enc.dcvs.extra-buff-count=2
+    vidc.enc.dcvs.extra-buff-count=2 \
+    mm.enable.sec.smoothstreaming=true
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.sys.fw.bservice_enable=true
+    ro.vendor.qti.sys.fw.bg_apps_limit=60 \
+    ro.vendor.qti.sys.fw.bservice_enable=true \
+    ro.vendor.qti.sys.fw.bservice_limit=5 \
+    ro.vendor.qti.sys.fw.bservice_age=5000
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -127,7 +146,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.vendor.qti.sys.fw.bg_apps_limit=60
+    ro.vendor.qti.sys.fw.bg_apps_limit=60 \
+    ro.min.fling_velocity=140 \
+    ro.max.fling_velocity=40000 \
+    vendor.perf.gestureflingboost.enable=true
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -145,6 +167,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.redir_party_num=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
+    persist.radio.add_power_save=1 \
     persist.vendor.radio.sib16_support=1
 
 # RmNet Data
