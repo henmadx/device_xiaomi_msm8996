@@ -29,7 +29,8 @@
     <protected-broadcast android:name="com.cyanogenmod.settings.device.CUST_UPDATE" />
 
     <uses-sdk
-        android:minSdkVersion="28" />
+        android:minSdkVersion="29"
+        android:targetSdkVersion="29"/>
 
     <application
         android:icon="@mipmap/ic_launcher_settings"
