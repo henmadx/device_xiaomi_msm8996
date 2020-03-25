@@ -534,9 +534,6 @@
          strictly needed. -->
     <bool name="config_sf_limitedAlpha">true</bool>
 
-    <!-- Whether navigation bar can be disabled (for devices with hardware keys) -->
-    <bool name="config_canDisableNavigationBar">true</bool>
-
     <!-- Whether to post reset runnable for all clients. Needed for some older
          vendor fingerprint HAL implementations. -->
     <bool name="config_fingerprintPostResetRunnableForAllClients">true</bool>
