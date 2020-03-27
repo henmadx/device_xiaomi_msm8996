@@ -523,7 +523,7 @@
     <bool name="config_filterDisplayModes">true</bool>
 
     <!-- Whether or not to use Night Light -->
-    <bool name="config_nightDisplayAvailable">false</bool>
+    <bool name="config_nightDisplayAvailable">true</bool>
 
     <!-- If this is true, device supports Sustained Performance Mode. -->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
