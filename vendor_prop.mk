@@ -128,7 +128,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
     vendor.video.disable.ubwc=1 \
     vidc.enc.dcvs.extra-buff-count=2 \
-    mm.enable.sec.smoothstreaming=true
+    mm.enable.sec.smoothstreaming=true \
+    mm.enable.smoothstreaming=true
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -181,6 +182,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.mux_count=8 \
     persist.data.df.iwlan_mux=9 \
     persist.data.df.dev_name=rmnet_usb0
+
+# Stagefright
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.thumbnail.prefer_hw_codecs=true
 
 # Surfaceflinger
 PRODUCT_PROPERTY_OVERRIDES += \
