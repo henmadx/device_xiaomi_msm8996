@@ -72,6 +72,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
 
+# ConfigStore HAL (SurfaceFlinger)
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.use_color_management=true \
+    ro.surface_flinger.wcg_composition_dataspace=143261696 \
+    ro.surface_flinger.protected_contents=true \
+    ro.surface_flinger.set_idle_timer_ms=80 \
+    ro.surface_flinger.set_touch_timer_ms=200 \
+    ro.surface_flinger.use_smart_90_for_video=true \
+    ro.surface_flinger.protected_contents=true \
+    ro.surface_flinger.support_kernel_idle_timer=true \
+    ro.surface_flinger.set_display_power_timer_ms=10000 \
+    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+    ro.surface_flinger.max_virtual_display_dimension=4096 \
+    ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
+    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
+
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.iwlan.enable=true \
