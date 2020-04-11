@@ -129,6 +129,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.cpurend.vsync=false \
     debug.sf.latch_unsignaled=1 \
+    debug.hwui.renderer=skiavk \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
     persist.hwc.enable_vds=1 \
