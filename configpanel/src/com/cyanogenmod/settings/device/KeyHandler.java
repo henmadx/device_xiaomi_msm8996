@@ -1,6 +1,5 @@
 /*
-* Copyright (C) 2018 Syberia Project
-* Copyright (C) 2019 ksrt12
+* Copyright (C) 2020 -henmadx-
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -53,34 +52,7 @@ public class KeyHandler implements DeviceKeyHandler {
         KEY_RECENTS
     };
 
-    protected final Context mContext;
-    private final PowerManager mPowerManager;
     private static boolean mButtonDisabled;
-    private Handler mHandler = new Handler();
-    private SensorManager mSensorManager;
-    private Sensor mProximitySensor;
-    WakeLock mProximityWakeLock;
-    private int mProximityTimeOut;
-    private boolean mProximityWakeSupported;
-
-    public KeyHandler(Context context) {
-        if (DEBUG) Log.i(TAG, "KeyHandler called");
-        mContext = context;
-        mPowerManager = context.getSystemService(PowerManager.class);
-
-        final Resources resources = mContext.getResources();
-        mProximityTimeOut = resources.getInteger(
-                com.android.internal.R.integer.config_proximityCheckTimeout);
-        mProximityWakeSupported = resources.getBoolean(
-                com.android.internal.R.bool.config_proximityCheckOnWake);
-
-        if (mProximityWakeSupported) {
-            mSensorManager = context.getSystemService(SensorManager.class);
-            mProximitySensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-            mProximityWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
-                    "ProximityWakeLock");
-        }
-    }
 
     public KeyEvent handleKeyEvent(KeyEvent event) {
         if (DEBUG) Log.i(TAG, "handleKeyEvent called - scancode=" + event.getScanCode() + " - keyevent=" + event.getAction());
@@ -95,4 +67,4 @@ public class KeyHandler implements DeviceKeyHandler {
         if (DEBUG) Log.i(TAG, "setButtonDisable=" + mButtonDisabled);
     }
 
-}
+} 
