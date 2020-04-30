@@ -93,8 +93,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.iwlan.enable=true \
     persist.data.mode=concurrent \
     persist.data.netmgrd.qos.enable=true \
-    ro.use_data_netmgrd=true \
-    ro.vendor.use_data_netmgrd=true
+    ro.use_data_netmgrd=true
 
 # Display (Qualcomm AD)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -103,9 +102,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qcom.ad.sensortype=2 \
     ro.vendor.display.cabl=0
 
+# Doze parameters
+PRODUCT_PROPERTY_OVERRIDES += \
+    pm.sleep_mode=1
+
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
+
+# Fast Dormancy
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.fast.dormancy=1 \
+    ro.config.hw_fast_dormancy=1 \
+    ro.ril.fast.dormancy.rule=1 \
+    ro.semc.enable.fast_dormancy=true
 
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -238,4 +248,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=180
