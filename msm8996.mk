@@ -220,7 +220,7 @@ PRODUCT_COPY_FILES += \
 
 # Healthd
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-service.capricorn
+    android.hardware.health@2.0-service.xiaomi_8996
 
 # HIDL
 PRODUCT_PACKAGES += \

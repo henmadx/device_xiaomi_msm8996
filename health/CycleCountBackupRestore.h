@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef DEVICE_XIAOMI_CAPRICORN_HEALTH_CYCLECOUNTBACKUPRESTORE_H
-#define DEVICE_XIAOMI_CAPRICORN_HEALTH_CYCLECOUNTBACKUPRESTORE_H
+#ifndef DEVICE_XIAOMI_XIAOMI_8996_HEALTH_CYCLECOUNTBACKUPRESTORE_H
+#define DEVICE_XIAOMI_XIAOMI_8996_HEALTH_CYCLECOUNTBACKUPRESTORE_H
 
 #include <string>
 #include <android-base/file.h>
@@ -24,7 +24,7 @@
 
 namespace device {
 namespace xiaomi {
-namespace capricorn {
+namespace xiaomi_8996 {
 namespace health {
 
 static constexpr int kBucketCount = 8;
@@ -47,8 +47,8 @@ private:
 };
 
 } // namespace health
-} // namespace capricorn
+} // namespace xiaomi_8996
 } // namespace xiaomi
 } // namespace device
 
-#endif // #ifndef DEVICE_XIAOMI_CAPRICORN_HEALTH_CYCLECOUNTBACKUPRESTORE_H
+#endif // #ifndef DEVICE_XIAOMI_XIAOMI_8996_HEALTH_CYCLECOUNTBACKUPRESTORE_H
