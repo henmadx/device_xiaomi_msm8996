@@ -3741,6 +3741,11 @@ int QCamera2HardwareInterface::startRecording()
         rc = pChannel->start();
     }
 
+    if (rc == NO_ERROR) {
+        // Set power Hint for video encoding
+        m_perfLock.powerHint(POWER_HINT_VIDEO_ENCODE, true);
+    }
+
     LOGI("X rc = %d", rc);
     return rc;
 }
@@ -3767,6 +3772,8 @@ int QCamera2HardwareInterface::stopRecording()
     int rc = stopChannel(QCAMERA_CH_TYPE_VIDEO);
 
     m_cbNotifier.flushVideoNotifications();
+    // Disable power hint for video encoding
+    m_perfLock.powerHint(POWER_HINT_VIDEO_ENCODE, false);
     LOGI("X rc = %d", rc);
     return rc;
 }
@@ -6038,7 +6045,6 @@ void QCamera2HardwareInterface::camEvtHandle(uint32_t /*camera_handle*/,
                         obj->mDefCond.broadcast();
                         LOGH("broadcast mDefCond signal\n");
                     }
-		    break;
                 default:
                     obj->processEvt(QCAMERA_SM_EVT_EVT_NOTIFY, payload);
                     break;
@@ -6946,10 +6952,12 @@ int32_t QCamera2HardwareInterface::addPreviewChannel()
         } else {
             rc = addStreamToChannel(pChannel, CAM_STREAM_TYPE_PREVIEW,
                                     preview_stream_cb_routine, this);
-            if (needSyncCB(CAM_STREAM_TYPE_PREVIEW) == TRUE) {
+#ifdef TARGET_TS_MAKEUP
+            int whiteLevel, cleanLevel;
+            if(mParameters.getTsMakeupInfo(whiteLevel, cleanLevel) == false)
+#endif
             pChannel->setStreamSyncCB(CAM_STREAM_TYPE_PREVIEW,
                     synchronous_stream_cb_routine);
-            }
         }
     }
 
@@ -7272,10 +7280,12 @@ int32_t QCamera2HardwareInterface::addZSLChannel()
     } else {
         rc = addStreamToChannel(pChannel, CAM_STREAM_TYPE_PREVIEW,
                                 preview_stream_cb_routine, this);
-        if (needSyncCB(CAM_STREAM_TYPE_PREVIEW) == TRUE) {
+#ifdef TARGET_TS_MAKEUP
+        int whiteLevel, cleanLevel;
+        if(mParameters.getTsMakeupInfo(whiteLevel, cleanLevel) == false)
+#endif
         pChannel->setStreamSyncCB(CAM_STREAM_TYPE_PREVIEW,
                 synchronous_stream_cb_routine);
-        }
     }
     if (rc != NO_ERROR) {
         LOGE("add preview stream failed, ret = %d", rc);
@@ -7399,10 +7409,12 @@ int32_t QCamera2HardwareInterface::addCaptureChannel()
             delete pChannel;
             return rc;
         }
-        if (needSyncCB(CAM_STREAM_TYPE_PREVIEW) == TRUE) {
+#ifdef TARGET_TS_MAKEUP
+        int whiteLevel, cleanLevel;
+        if(mParameters.getTsMakeupInfo(whiteLevel, cleanLevel) == false)
+#endif
         pChannel->setStreamSyncCB(CAM_STREAM_TYPE_PREVIEW,
                 synchronous_stream_cb_routine);
-	}
     }
 
     if (!mParameters.getofflineRAW()) {
@@ -10297,34 +10309,6 @@ bool QCamera2HardwareInterface::needDeferred(cam_stream_type_t stream_type)
 
     if (stream_type == CAM_STREAM_TYPE_VIDEO) {
         return FALSE;
-    }
-    return FALSE;
-}
-
-/*===========================================================================
- * FUNCTION   : needSyncCB
- *
- * DESCRIPTION: Decide syncronous callback per stream
- *
- * PARAMETERS :
- *  @stream_type: stream type
- *
- * RETURN     : true - if background task is needed
- *              false -  if background task is NOT needed
- *==========================================================================*/
-bool QCamera2HardwareInterface::needSyncCB(cam_stream_type_t stream_type)
-{
-#ifdef TARGET_TS_MAKEUP
-    int whiteLevel, cleanLevel;
-    if(mParameters.getTsMakeupInfo(whiteLevel, cleanLevel) == TRUE) {
-        return FALSE;
-    }
-#endif
-
-    char value[PROPERTY_VALUE_MAX];
-    property_get("persist.camera.preview.sync_cb", value, "1");
-    if ((atoi(value) == 1) && (stream_type == CAM_STREAM_TYPE_PREVIEW)) {
-        return TRUE;
     }
     return FALSE;
 }
