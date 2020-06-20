@@ -34,9 +34,6 @@
 /sys/devices/virtual/timed_output/vibrator/vtg_min      u:object_r:sysfs_vibrator:s0
 /sys/devices/virtual/timed_output/vibrator/vtg_max      u:object_r:sysfs_vibrator:s0
 
-# FPS Info
-/sys/devices/virtual/graphics/fb0/measured_fps                              u:object_r:sysfs_fps:s0
-
 # Data files
 /data/fpc(/.*)?                       u:object_r:fpc_data_file:s0
 /data/camera(/.*)?                    u:object_r:camera_socket:s0
