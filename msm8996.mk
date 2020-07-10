@@ -142,7 +142,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     camera.msm8996 \
-    libmm-qcamera
+    libmm-qcamera \
+    $(LOCAL_PATH)/configs/org.lineageos.snap.xml:system/etc/permissions/org.lineageos.snap.xml
 
 # CNE
 PRODUCT_PACKAGES += \
