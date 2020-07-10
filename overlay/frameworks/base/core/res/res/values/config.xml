@@ -533,9 +533,11 @@
          app, they can be remapped here. The format is
          "oldname:newname", one per entry. -->
     <string-array name="config_displayModeMappings" translatable="false">
-        <item>A_Standard:standard</item>
-        <item>B_Warm mode:reading</item>
-        <item>D_Cold mode:dynamic</item>
+        <item>none:standard</item>
+        <item>smart_eyedefault:reading</item>
+        <item>GM_1:saturated</item>
+        <item>hal_srgb:srgb</item>
+        <item>smart_MC:dci_p3</item>
     </string-array>
 
     <!-- Should we filter any display modes which are unampped? -->
