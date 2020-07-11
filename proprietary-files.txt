@@ -429,8 +429,8 @@ lib64/lib-imsvt.so
 lib64/lib-imsvtextutils.so
 lib64/lib-imsvtutils.so
 lib64/libdiag_system.so
-lib64/libimscamera_jni.so:product/lib64/libimscamera_jni.so
-lib64/libimsmedia_jni.so:product/lib64/libimsmedia_jni.so
+lib64/libimscamera_jni.so
+lib64/libimsmedia_jni.so
 lib64/librcc.so
 lib64/vendor.qti.imsrtpservice@1.0.so
 -product/priv-app/ims/ims.apk|8c4b1dcfc4653b15b16485a1dd60fa5f6fa9f47c
